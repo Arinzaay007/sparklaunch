@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = "https://sparklaunch.vercel.app";
+const siteUrl = "https://sparklaunch-five.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
