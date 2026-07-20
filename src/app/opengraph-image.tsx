@@ -9,17 +9,20 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Read brand assets from disk (works on the Node runtime at build/request time).
-const heroData = readFileSync(
-  join(process.cwd(), "public/hero/workspace.jpg")
-);
-const heroSrc = `data:image/jpeg;base64,${heroData.toString("base64")}`;
-
-const playfair = readFileSync(
-  join(process.cwd(), "src/app/_og-assets/PlayfairDisplay-Bold.ttf")
-);
-
 export default async function Image() {
+  // Read brand assets from disk inside the handler so merely importing this
+  // module (which Next does to collect `size`/`alt` for the page's <meta>
+  // tags) never touches the filesystem. Assets live in src/app so Next traces
+  // them into the serverless bundle.
+  const heroData = readFileSync(
+    join(process.cwd(), "src/app/_og-assets/hero.jpg")
+  );
+  const heroSrc = `data:image/jpeg;base64,${heroData.toString("base64")}`;
+
+  const playfair = readFileSync(
+    join(process.cwd(), "src/app/_og-assets/PlayfairDisplay-Bold.ttf")
+  );
+
   return new ImageResponse(
     (
       <div
