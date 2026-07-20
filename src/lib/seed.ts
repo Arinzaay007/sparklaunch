@@ -15,7 +15,8 @@ function logo(slug: string): string {
   return `/logos/${slug}.svg`;
 }
 function shots(slug: string): string[] {
-  return [`/covers/${slug}.svg`];
+  // Real captured screenshot first, branded cover mockup second.
+  return [`/shots/${slug}.png`, `/covers/${slug}.svg`];
 }
 
 export const SEED_PRODUCTS: Product[] = [
