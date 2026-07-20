@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 40 30% 98%;
+    --foreground: 20 14% 12%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 20 14% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 263 70% 50%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
+    --popover-foreground: 20 14% 12%;
+    --primary: 20 14% 14%;
+    --primary-foreground: 40 30% 98%;
+    --secondary: 36 20% 94%;
+    --secondary-foreground: 20 14% 14%;
+    --muted: 36 20% 94%;
+    --muted-foreground: 25 8% 42%;
+    --accent: 36 24% 92%;
+    --accent-foreground: 20 14% 14%;
+    --destructive: 0 72% 46%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 263 70% 50%;
-    --radius: 0.65rem;
+    --border: 30 15% 88%;
+    --input: 30 15% 86%;
+    --ring: 24 60% 45%;
+    --radius: 0.5rem;
   }
 
   /* Dark mode is the default look of SparkLaunch. */
@@ -76,6 +76,26 @@
 
 .spark-gradient-text {
   @apply bg-gradient-to-r from-violet-400 via-fuchsia-400 to-violet-300 bg-clip-text text-transparent;
+}
+
+/* Editorial display font utility. */
+.font-display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+}
+
+/* Full-bleed hero: dark gradient scrim over a photo so white text stays legible. */
+.hero-scrim {
+  background: linear-gradient(
+    to bottom,
+    hsl(20 14% 8% / 0.35) 0%,
+    hsl(20 14% 8% / 0.25) 40%,
+    hsl(20 14% 8% / 0.65) 100%
+  );
+}
+
+/* Subtle top-of-page fade for the fixed transparent navbar over the hero. */
+.nav-scrim {
+  background: linear-gradient(to bottom, hsl(20 14% 8% / 0.5), transparent);
 }
 
 .spark-grid {
